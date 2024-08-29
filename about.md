@@ -10,4 +10,4 @@ permalink: /about/
 
 [linkedIn](https://www.linkedin.com/in/rajat94joshi/)
 
-[twitter / X](https://x.com/rojojojo_)
+[twitter / X](https://x.com/foreveroffgrid)
