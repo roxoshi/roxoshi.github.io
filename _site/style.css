@@ -1,0 +1,35 @@
+body {
+  max-width: 960px;
+  min-width: 960px;
+  margin: 0 auto 0 auto;
+  margin-top: 2em;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+}
+
+div {
+  diplay: block;
+  unicode-bidi: isolate;
+}
+.website-title {
+  text-align: left;
+}
+
+footer {
+  margin-top: 12em;
+  margin-bottom: 3em;
+  font-size: 14px;
+}
+.container {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}

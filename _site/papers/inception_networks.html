@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Going deeper with convolution</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="website-title"><a href="../index.html">Rajat's Blog</a></h1>
+    <h1 class="website-title">Going deeper with convolution</h1>
+      <h2>Key Highlights:</h2>
+      <ul>
+        <li>This model uses 12x fewer params than than the previous ImageNet 2014 winner</li>
+        <li>This paper uses a network-in-network architecture suggested by Lin et al. in order to increase the representational power of NNs.</li>
+        <li>1x1 convolutions are used for: a)dimensionality reduction to remove computational bottlenecks, b) this allows for building of wider and deeper NNs</li>
+        <li>Arora et al. - If the probability distribution of the data-set is representable by a large, very sparse deep neural network, then the optimal network newtwork topology can be constructed layer by layer by analyzing the correlation statistics of the actiations of the last layer and clustering neurons with highly correlated outputs</li>
+      </ul>
+      <h2>Drawback's of predecesors</h2>
+      <p>It is not ideal to continously increase size of the network to improve the model because 
+      <ul>
+        <li>training larger networks is prone to overfitting,</li>
+        <br>
+        <li>increase in use of computational resources. The computational increase is an even bigger problem when the new convolution layers we add to our network have neurons with weights close to zero, i.e. that computation is practically wasted</li>
+      </ul></p>
+      <br>
+      <h2>Core ideas in inception networks</h2>
+      <p>
+      <ul>
+        <li>Moving from fully connected to sparsely connected architectures, even inside the convolutions</li>
+        <br>
+        <li>The paper also gives some importance to the biological mimicing aspect of neural networks, i.e. the <a href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebbian principle</a></li>
+        <br>
+        <li>This leads up to an idea of a network that utilises the bio mimicking of sparse networks but also clusters sparse networks together to get the computational benefits of a dense network</li>
+        <br>
+        <li>It was known that clustering sparse matricies into relatively dense sub-matrices tends to give SOTA performance for sparse matrix multiplication. Hence, the authors tried to use the same principle in construction of DNN architectures</li>
+      </ul>
+      <h2>Architectural details</h2>
+      <ul>
+        <li>Find an optimal local construction of a ConvBlock and repeat it spacially.</li>
+        <br>
+        <li></li>
+      </ul>
+    <footer>
+      <div style="float:right; text-align:right;">
+        <a href="https://www.x.com/roxoshi">x.com/roxoshi<a>
+        <br>
+        <br>
+        <a href="https://www.github.com/roxoshi">github.com/roxoshi</a> 
+   
+      </div> 
+      <p>
+      Rajat
+      <br>
+      <br>
+      roxoshi9@gmail.com
+      <br>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
