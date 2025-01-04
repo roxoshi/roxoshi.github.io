@@ -1,8 +1,9 @@
-## `hello world`?
+## hello world?
 
 Notes on basic computer architecture.
 
 ### Basics
+
 Phases of running a program
 - preprocessing phase
 - compiling phase
@@ -13,7 +14,6 @@ Why learn compilers and computer architecture
 - Helps optimize program performance
 - Understanding error - most prominent linker errors
 - Avoiding security vulnerabilities
-
 
 Hardware organization of a system
 - Buses
@@ -27,8 +27,8 @@ Hardware organization of a system
      - has a word-size storage device(register) called program counter(PC)
      - At any point in time, PC points at some instruction in the memory
 
+**Caching**
 
-### Caching
 General caching process
 - Move machine instructions from disk to main memory
 - copy instructions from main memory to processor
@@ -41,7 +41,6 @@ Caches are some additional memory units to support the processor register memory
 - L1 is faster and hold less data, vice versa for L2 cache
 - Both are implemented with a hardware technology known as **static random access memory(SRAM)**
 
-
 ### Operating System
 
 Operating system is a layer of software between the application program and the hardware and it has two primary purposes,
@@ -50,8 +49,7 @@ Operating system is a layer of software between the application program and the 
 
 **Processes**
 
-Processes are abstractions over I/O devices, main memory and the processor.
-
+Processes are abstractions over I/O devices, main memory and the processor
 - context switching: running multiple processes on a single processor by saving the context of one process when it is stopped and then loading the context of another process so that the procesor can continue to run it from where it was left. Context switching pass the control flow of processer to different processes
 - system call: a special function that passes control to the operating system
 - kernel: it is the portion of the operating system code that is always resident in the memory. 
@@ -73,8 +71,14 @@ It is an abstraction that provides each process with the illusion that it has ex
 - *Stack*: It's at the top of user's virtual address; it expands and contracts with function calls and returns respectively
 - *Kernel virutal memory*: reserved for kernel only, application programs cannot access this area. They must invoke the kernel to perform these operations
 
-**Files**
+**Files**: A file is a sequence of bytes. Every I/O device, including disks, keyboards, displays, and even networks, is modeled as a file. 
 
-A file is a sequence of bytes. Every I/O device, including disks, keyboards, displays, and even networks, is modeled as a file. 
+**Concurrency and parallelism**
 
-
+Concurrency is a system with multiple,simultaneous activities, and the term parallelism refer to the use of concurrency to make a system run faster. There are three types of parallelism from highest to lowest level of abstraction
+- Thread level concurrency
+    - Modern computers have multiple cores; each core has its own register, ALU, cache etc
+    - Also, each core has multiple threads that can simulataneously run two control flows(if 2 threads per core) in parallel
+    - i.e., if a computer has 4 cores then it has 8 threads and it can run 8 processes in parallel
+    - All the core have their own independent cache and also share a common cache
+    - Note - threads in a CPU in theory do not run in parallel, but at every CPU cycle the core knows which thread would be most optimal to run. This concept is somewhat analogous to an event loop which keeps checking the states at every cycle, only here we have billions of cycles per second in modern CPUs
