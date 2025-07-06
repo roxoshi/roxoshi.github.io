@@ -25,8 +25,16 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content" data-layout="index">
     <section id="hero" class="pt-8 pb-6">
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
+        Rajat Joshi
       </h1>
+      <h2 class="mb-4 text-2xl font-semibold">Freelance Machine Learning Engineer</h2>
+      <p class="mb-6 max-w-xl text-lg">I build impactful machine learning solutions for startups and businesses. Explore my projects, blog, and resume, or get in touch for freelance opportunities.</p>
+      <div class="flex flex-wrap gap-4 mb-8">
+        <LinkButton href="/projects" text="Projects" />
+        <LinkButton href="/blog" text="Blog" />
+        <LinkButton href="/resume" text="Resume" />
+        <LinkButton href="/contact" text="Contact" />
+      </div>
       <a
         target="_blank"
         href="/rss.xml"
