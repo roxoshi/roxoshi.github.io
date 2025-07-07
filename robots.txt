@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://roxoshi.github.io/sitemap-index.xml
+Sitemap: https://roxoshi.github.io/popular-phase/sitemap-index.xml
