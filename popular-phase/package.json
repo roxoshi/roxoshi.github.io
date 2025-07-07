@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
     "predeploy": "npm run build",
-    "deploy": "npm run build && touch dist/.nojekyll && gh-pages -d dist",
+    "deploy": "npm run build && touch dist/.nojekyll && gh-pages -d dist --dotfiles",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
