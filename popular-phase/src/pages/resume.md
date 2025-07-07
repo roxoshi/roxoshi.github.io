@@ -19,7 +19,9 @@ Experienced Machine Learning Engineer with a strong background in deep learning,
 - **Domains:** Data Science, NLP, Computer Vision
 - **Practices:** MLOps, CI/CD, GitHub Actions
 
+---
 import ExperienceTimeline from "../components/ExperienceTimeline.astro";
+---
 
 ## Experience Timeline
 <ExperienceTimeline />
