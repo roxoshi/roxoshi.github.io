@@ -1,4 +1,3 @@
-@import "tailwindcss";
 @import "./typography.css";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -30,7 +29,8 @@ html[data-theme="dark"] {
 
 @layer base {
   * {
-    @apply border-border outline-accent/75;
+    @apply border-border;
+    outline-color: rgb(var(--accent), 0.75);
     scrollbar-width: auto;
     scrollbar-color: var(--color-muted) transparent;
   }
@@ -38,7 +38,11 @@ html[data-theme="dark"] {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background font-mono text-foreground;
+    ::selection {
+      background-color: rgb(var(--accent), 0.75);
+      color: var(--background);
+    }
   }
   a,
   button {
@@ -54,8 +58,10 @@ html[data-theme="dark"] {
   }
 }
 
-@utility max-w-app {
-  @apply max-w-3xl;
+@layer utilities {
+  .max-w-app {
+    max-width: 48rem; /* same as max-w-3xl */
+  }
 }
 
 .active-nav {

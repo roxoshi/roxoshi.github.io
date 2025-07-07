@@ -1,7 +1,7 @@
 ---
 title: "Projects"
 description: "A showcase of my machine learning and software engineering projects."
-layout: "../layouts/PostLayout.astro"
+layout: "../layouts/Layout.astro"
 ---
 
 # Projects

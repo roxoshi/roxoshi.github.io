@@ -1,7 +1,7 @@
 ---
 title: "Resume"
 description: "Rajat Joshi - Machine Learning Engineer Resume"
-layout: "../layouts/PostLayout.astro"
+layout: "../layouts/Layout.astro"
 ---
 
 # Resume

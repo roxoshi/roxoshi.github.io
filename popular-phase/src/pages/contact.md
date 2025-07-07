@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 description: "Get in touch with Rajat Joshi for freelance machine learning projects."
-layout: "../layouts/PostLayout.astro"
+layout: "../layouts/Layout.astro"
 ---
 
 # Contact
