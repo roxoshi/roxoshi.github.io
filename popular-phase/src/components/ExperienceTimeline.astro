@@ -1,0 +1,60 @@
+---
+// ExperienceTimeline.astro: Visual timeline component for resume page
+const experiences = [
+  {
+    title: "Senior Data Scientist",
+    company: "Amazon Web Services (AWS)",
+    location: "Bangalore",
+    period: "Jan 2025 – Present",
+  },
+  {
+    title: "Principal Data Scientist",
+    company: "Saviynt",
+    location: "Bangalore",
+    period: "Apr 2024 – Jan 2025",
+  },
+  {
+    title: "Senior Data Scientist",
+    company: "IDFC First Bank",
+    location: "Bangalore",
+    period: "May 2021 – Mar 2024",
+  },
+  {
+    title: "Data Scientist",
+    company: "Flipkart",
+    location: "Bangalore",
+    period: "Jan 2019 – Apr 2021",
+  },
+  {
+    title: "Decision Scientist",
+    company: "MuSigma",
+    location: "Bangalore",
+    period: "Nov 2016 – Dec 2019",
+  },
+];
+---
+
+<div class="timeline-container my-8">
+  <h2 class="text-xl font-bold mb-4 text-accent">Work Experience Timeline</h2>
+  <ol class="relative border-s-2 border-accent/40 ms-4">
+    {experiences.map((exp, idx) => (
+      <li class="mb-8 ms-6 relative" key={exp.title + exp.company}>
+        <span class="absolute -start-4 top-1.5 flex h-3 w-3 items-center justify-center">
+          <span class="h-3 w-3 rounded-full bg-accent border-2 border-white"></span>
+        </span>
+        <div class="bg-background rounded-lg p-4 shadow-sm border border-border/40">
+          <div class="font-semibold text-lg text-foreground">{exp.title}</div>
+          <div class="text-accent font-medium">{exp.company}</div>
+          <div class="text-sm text-muted">{exp.location} &middot; {exp.period}</div>
+        </div>
+      </li>
+    ))}
+  </ol>
+</div>
+
+<style>
+.timeline-container ol {
+  list-style: none;
+  padding: 0;
+}
+</style>
