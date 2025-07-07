@@ -2,6 +2,7 @@
 title: "Resume"
 description: "Rajat Joshi - Machine Learning Engineer Resume"
 layout: "../layouts/Layout.astro"
+import ExperienceTimeline from "../components/ExperienceTimeline.astro";
 ---
 
 # Resume
@@ -18,10 +19,6 @@ Experienced Machine Learning Engineer with a strong background in deep learning,
 - **Frameworks/Tools:** FastAPI, Docker, AWS, SageMaker, Bedrock, ECS-Fargate
 - **Domains:** Data Science, NLP, Computer Vision
 - **Practices:** MLOps, CI/CD, GitHub Actions
-
----
-import ExperienceTimeline from "../components/ExperienceTimeline.astro";
----
 
 ## Experience Timeline
 <ExperienceTimeline />
