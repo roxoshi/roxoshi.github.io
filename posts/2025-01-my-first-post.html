@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My First Post - RJs Tech Blog</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    header,
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    time {
+      display: block;
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1><a href="../index.html" style="color:white; text-decoration:none;">RJs Tech Blog</a></h1>
+    <nav>
+      <a href="index.html" style="color:white; margin:0 10px;">Home</a>
+      <a href="about.html" style="color:white; margin:0 10px;">About</a>
+      <a href="contact.html" style="color:white; margin:0 10px;">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1 id="understanding-graph-representations-in-machine-learning">Understanding Graph Representations in Machine
+        Learning</h1>
+      <p>Graphs are everywhere — in social networks, biological systems, recommendation engines, and even transportation
+        networks. But before we can train models on graphs, we must <strong>choose how to represent them</strong>. This
+        is the focus of Lecture 1.3 from Stanford’s CS224W course, <em>Machine Learning with Graphs</em>, taught by Jure
+        Leskovec.</p>
+      <p>Let’s unpack the key ideas.</p>
+      <h2 id="1-what-makes-a-graph">1. What Makes a Graph?</h2>
+      <p>At its simplest, a <strong>graph (G)</strong> consists of:</p>
+      <ul>
+        <li>
+          <p><strong>Nodes (V or N)</strong> – representing entities such as people, proteins, or web pages.</p>
+        </li>
+        <li>
+          <p><strong>Edges (E)</strong> – representing relationships or interactions between nodes.</p>
+        </li>
+      </ul>
+      <p>Formally, a graph is written as:[G = (V, E)]</p>
+      <p>This abstract structure gives graphs a <strong>universal language</strong>: the same mathematical
+        representation can describe a social network, a protein interaction map, or a citation network. Once data is
+        represented as a graph, the same algorithms can apply to all.</p>
+      <h2 id="2-choosing-the-right-representation">2. Choosing the Right Representation</h2>
+      <p>The <strong>choice of graph representation</strong> is crucial because it determines:</p>
+      <ul>
+        <li>
+          <p>What kinds of relationships are captured.</p>
+        </li>
+        <li>
+          <p>What predictions are possible.</p>
+        </li>
+      </ul>
+      <p>For example:</p>
+      <ul>
+        <li>
+          <p>If we connect people who <strong>work together</strong>, we get a <em>professional network</em>.</p>
+        </li>
+        <li>
+          <p>For scientific papers, connecting those that <strong>cite each other</strong> creates a <em>citation
+              network</em>; connecting those that share <strong>keywords</strong> might produce a noisier, less useful
+            network.</p>
+        </li>
+      </ul>
+      <p><b>Takeaway:</b>Always ask: <i>What are my nodes? What are my edges?</i> The answers define the scope and usefulness of
+        your graph model.</p>
+      <h2 id="3-directed-vs-undirected-graphs">3. Directed vs. Undirected Graphs</h2>
+      <ul>
+        <li>
+          <p><strong>Undirected graphs</strong> model <strong>mutual relationships</strong> (e.g., friendship,
+            co-authorship, protein interaction).Edge (A, B) = (B, A).</p>
+        </li>
+        <li>
+          <p><strong>Directed graphs</strong> model <strong>one-way relationships</strong> (e.g., follower-followee on
+            Twitter, transactions).Edge (A → B) ≠ (B → A).</p>
+        </li>
+      </ul>
+      <p>These distinctions influence how we measure <strong>node degree</strong>:</p>
+      <ul>
+        <li>
+          <p>In undirected graphs:Degree = number of connected edges.</p>
+        </li>
+        <li>
+          <p>In directed graphs:</p>
+          <ul>
+            <li>
+              <p><strong>In-degree</strong> = number of incoming edges.</p>
+            </li>
+            <li>
+              <p><strong>Out-degree</strong> = number of outgoing edges.</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="4-bipartite-graphs-and-projections">4. Bipartite Graphs and Projections</h2>
+      <p>A <strong>bipartite graph</strong> has two distinct node types, with edges only between types:</p>
+      <ul>
+        <li>
+          <p>Example:</p>
+          <ul>
+            <li>
+              <p>Authors ↔ Papers</p>
+            </li>
+            <li>
+              <p>Users ↔ Movies</p>
+            </li>
+            <li>
+              <p>Customers ↔ Products</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>We can create <strong>projected graphs</strong> by collapsing one side:</p>
+      <ul>
+        <li>
+          <p>Projecting an author–paper bipartite graph onto the “authors” side gives a <strong>co-authorship
+              network</strong> (authors connected if they wrote a paper together).</p>
+        </li>
+        <li>
+          <p>Projecting onto the “papers” side gives a <strong>paper similarity network</strong> (papers connected if
+            they share authors).</p>
+        </li>
+      </ul>
+      <h2 id="5-ways-to-represent-graphs-in-memory">5. Ways to Represent Graphs in Memory</h2>
+      <p>There are multiple computational representations of a graph:</p>
+      <h3 id="a-adjacency-matrix">a) <strong>Adjacency Matrix</strong></h3>
+      <p>A binary or weighted ( n \times n ) matrix ( A ):</p>
+      <ul>
+        <li>
+          <p>( A_{ij} = 1 ) if nodes <em>i</em> and <em>j</em> are connected, 0 otherwise.</p>
+        </li>
+        <li>
+          <p>Symmetric for undirected graphs.</p>
+        </li>
+      </ul>
+      <p>Real-world adjacency matrices are <strong>sparse</strong>, meaning most entries are zero — since most entities
+        are connected to only a few others.</p>
+      <h3 id="b-edge-list">b) <strong>Edge List</strong></h3>
+      <p>Simply a list of pairs (or triplets for weighted edges):</p>
+      <pre><code>
+        A B
+        B C
+        C D
+      </code></pre>
+      <p>This is easy to store but harder to analyze directly.</p>
+      <h3 id="c-adjacency-list">c) <strong>Adjacency List</strong></h3>
+      <p>For each node, store a list of its neighbors:</p>
+      <pre><code>
+        A: [B, D]
+        B: [A, C]
+        C: [B, D]
+        D: [A, C]
+      </code></pre>
+      <p>This is compact and efficient for sparse graphs — most practical systems use this representation.</p>
+      <h2 id="6-attributes-on-nodes-and-edges">6. Attributes on Nodes and Edges</h2>
+      <p>Graphs often carry <strong>attributes</strong> beyond topology:</p>
+      <ul>
+        <li>
+          <p><strong>Node attributes:</strong> age, gender, geographic location, chemical properties, etc.</p>
+        </li>
+        <li>
+          <p><strong>Edge attributes:</strong> weights (strength of relationship), sign (friend vs. foe), type (message,
+            purchase), or duration (call length).</p>
+        </li>
+      </ul>
+      <p>These can also appear directly in adjacency matrices as <strong>weights</strong>, e.g.:[A_{ij} = strength
+        of connection between i and j]</p>
+      <h2 id="7-special-graph-structures">7. Special Graph Structures</h2>
+      <ul>
+        <li>
+          <p><strong>Self-loops:</strong> an edge from a node to itself (common in message-passing algorithms).</p>
+        </li>
+        <li>
+          <p><strong>Multigraphs:</strong> allow multiple edges between the same pair of nodes (e.g., multiple emails
+            between two people).</p>
+        </li>
+        <li>
+          <p><strong>Weighted graphs:</strong> store edge intensities as numbers instead of binary connections.</p>
+        </li>
+      </ul>
+      <h2 id="8-connectivity-and-components">8. Connectivity and Components</h2>
+      <p>A graph is <strong>connected</strong> if there’s a path between every pair of nodes.Disconnected graphs split
+        into <strong>connected components</strong>.</p>
+      <p>In <strong>directed graphs</strong>, we define:</p>
+      <ul>
+        <li>
+          <p><strong>Weak connectivity:</strong> connected if direction is ignored.</p>
+        </li>
+        <li>
+          <p><strong>Strong connectivity:</strong> for every pair (A, B), there’s a path A→B and B→A.</p>
+        </li>
+      </ul>
+      <p>Strongly connected nodes form <strong>strongly connected components (SCCs)</strong> — key structures in
+        analyzing networks like the web or social media.</p>
+      <h2 id="9-the-big-picture">9. The Big Picture</h2>
+      <p>Choosing the right graph representation isn’t just about format — it’s about how you model reality.The
+        structure you define:</p>
+      <ul>
+        <li>
+          <p>Determines what your graph <em>means</em>.</p>
+        </li>
+        <li>
+          <p>Shapes the features and patterns machine learning models can discover.</p>
+        </li>
+      </ul>
+      <p><strong>In summary:</strong></p>
+      <ul>
+        <li>
+          <p>Define meaningful nodes and edges.</p>
+        </li>
+        <li>
+          <p>Pick directed or undirected structure based on relationships.</p>
+        </li>
+        <li>
+          <p>Use efficient data structures (adjacency lists for large graphs).</p>
+        </li>
+        <li>
+          <p>Include node/edge attributes to enrich your model.</p>
+        </li>
+        <li>
+          <p>Understand connectivity for deeper analysis.</p>
+        </li>
+      </ul>
+      <p><em>Inspired by Lecture 1.3 of</em> <a href="https://www.youtube.com/watch?v=P-m1Qv6-8cI"><em>Stanford CS224W:
+            Machine Learning with Graphs</em></a><em>, taught by Prof. Jure Leskovec.</em></p>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 RJs Tech Blog · <a href="../index.html" style="color:#aaa;">Back to Home</a></p>
+  </footer>
+</body>
+
+</html>
