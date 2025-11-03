@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My First Post - Rajat's blog</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      background: #fdfdfd;
+      color: #333;
+    }
+    header, footer {
+      background: white;
+      color: white;
+      text-align: left;
+      padding: 1rem;
+    }
+    main {
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 0rem;
+    }
+    h4 {
+      padding-bottom: 0.1rem;
+    }
+    article a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+    article a:hover {
+      text-decoration: underline;
+    }
+    footer p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h2><a href="../index.html" style="color:#222; text-decoration:none;">Rajat's blog</a></h2>
+    <nav>
+      <a href="../index.html" style="color:#222; margin:0 10px;">Home</a>
+      <a href="../about.html" style="color:#222; margin:0 10px;">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h3 id="processes-and-schedulers">OS - Processes and Schedulers</h3>
+      <p>A non-trivial task that an operating system performs is running processes and running them in a way that make it seem that multiple processes are running simultaneously. With multiple threads and processors available to the modern CPUs, today's operating systems do run multiple processes simultaneously but since the purpose of this blog is educational I will limit my discussion to single processor CPU.</p>
+      <h4>What is a process?</b></h4>
+      <p>We will discuss what a program is first. A program is a set of instructions that you want the computer to implement. The instructions will be in some programming language like C++. The program is a static entity residing on your disk (persistent storage). To oversimplify things we can say that when a program executes it is a process. But a lot happens under the hood for the process to be created and executed. <br></p>
+      <ul>
+        <li>The program instructions from your language is converted to the programming language that your CPU can understand, which is assembly.</li>
+        <li>Then the program is loaded from disk to memory (RAM) so that data from it readily available for execution.</li>
+        <li>Registers are allocated on the CPU for the instructions and the data (variables, strings, constants etc.) of your program.</li>
+        <li>After all this the CPU executes your program and it displays an output or performs some action expected by you.</li>
+      </ul>
+      <h4>Who controls the process?</h4>
+      <p>The operating system is the leader and orchestrator of every software running in your computer. The operating system has to have the maximum control over the resources like CPU, memory, cache, registers etc. But sometimes the program you want to run also needs some accesses or resources that the CPU controls. One way could be to temporarily give the privileges to the process to run the restricted action. But OS handles it in a smart way. When a program needs privileged access it makes something called a syscall to the os and the control is transfered to the operating system to perform the privileged action on behalf of the process. Syscall is one of the three mechanisms we have that are used to transfer control from the user process back to the operating system</p>
+      <ol>
+        <li>Syscall: when the user process actively requests the os to perform privileged actions on it's behalf</li>
+        <li>Exceptions: when a program performs an illegal action (divide by zero, attempting to access memory that is not part of the process, etc.)</li>
+        <li>Interrupt: When the OS has to interrupt the current user process due to a reason independent of the user process. For example - to perform multitasking by time sharing the OS has to switch between different user process every few miliseconds so that different processes seem to be running in simultaneously. It is an important topic I will come back to later.</li>
+      </ol>
+    </article>
+
+  </main>
+
+  <footer>
+  </footer>
+</body>
+
+</html>
