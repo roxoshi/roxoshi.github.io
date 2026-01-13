@@ -1,0 +1,82 @@
+/* 1. Global Reset & Colors */
+body {
+  background-color: #0a0a0a; /* Deep black */
+  color: #00ff41; /* Classic Matrix Green */
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  line-height: 1.0;
+}
+
+/* 2. The Main Container */
+#wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #004400; /* Subtle border */
+}
+
+/* 3. Typography */
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #004400;
+  padding-bottom: 5px;
+}
+
+h1 { font-size: 1.5rem; color: #00ff41; }
+
+a {
+  color: #00ff41;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #00ff41;
+  color: #0a0a0a; /* Invert effect on hover */
+}
+
+/* 4. List Styling */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li::before {
+  color: #008800;
+}
+
+.date {
+  color: #008800;
+  font-size: 0.9rem;
+  margin-right: 15px;
+}
+
+/* 5. CRT Scanline Overlay (Optional) */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none; /* Allows clicking through the lines */
+  z-index: 999;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 0.8rem;
+  color: #004400;
+  text-align: center;
+}

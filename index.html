@@ -5,62 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rajat's blog</title>
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      background: #fdfdfd;
-      color: #333;
-    }
-    header, footer {
-      background: white;
-      color: white;
-      text-align: left;
-      padding: 1rem;
-    }
-    main {
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      margin-bottom: 0rem;
-    }
-    h2 {
-      padding-bottom: 0.1rem;
-    }
-    article a {
-      text-decoration: none;
-      color: #0077cc;
-    }
-    article a:hover {
-      text-decoration: underline;
-    }
-    footer p {
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
 </head>
-<body>
-  <header>
-    <h2><a href="./index.html" style="color:#222; text-decoration:none;">Rajat's blog</a></h2>
-    <nav>
-      <a href="./index.html" style="color:#222; margin:0 10px;">Home</a>
-      <a href="./about.html" style="color:#222; margin:0 10px;">About</a>
-    </nav>
-  </header>
+<body style="line-height: 1.5;">
+  <div class="scanlines"></div>
 
-  <main>
-    <section id="table-of-contents">
-        <h4><a href="#machine-learning">Machine Learning</a></h4>
-        <ul>
-            <li><a href="posts/2025-01-my-first-post.html">GraphML 1: Graph Representation</a></li>
-        </ul>
-    </section>
-    
-  </main>
+  <div id="wrapper">
+    <header>
+      <h1>ROOT@RAJAT:~# blog</h1>
+      <nav>
+        <a href="./index.html">[HOME]</a>
+        <a href="./about.html">[ABOUT]</a>
+      </nav>
+    </header>
 
-  <footer>
-  </footer>
+    <main>
+      <section id="table-of-contents">
+          <h3>>machine-learning</h3>
+          <ul>
+              <li>
+                <span class="date">2025-01-01</span>
+                <a href="posts/2025-01-my-first-post.html">GraphML: Representation</a>
+              </li>
+          </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Connection: SECURE | Encryption: AES-256</p>
+    </footer>
+  </div>
 </body>
 </html>
